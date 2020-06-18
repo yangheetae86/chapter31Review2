@@ -9,8 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //    let tap = TapGesture()
+    //        .onEnded { (_) in
+    //            print("외웠다")
+    //    }
+    
     var body: some View {
-        Text("Hello, World!")
+        //바디 밖이 아닌 안에서 상수를 선언했을 때, 리턴 값이 무엇인지 정해주어야 한다.
+        let tap = TapGesture()
+            .onEnded { (_) in
+                print("외웠다")
+        }
+        
+        return Image(systemName: "person.fill")
+            .foregroundColor(.green)
+            .font(.largeTitle)
+            .gesture(tap)
     }
 }
 
